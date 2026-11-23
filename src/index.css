@@ -1,0 +1,50 @@
+:root {
+  --fundo-escuro: #303030;
+  --roxo: #6366f1;
+  --azul: #0f90ff;
+  --vermelho: #ff0000;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { min-height: 100vh; }
+button { font: inherit; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--azul); outline-offset: 2px; }
+
+.logo { font-size: 4.5rem; font-weight: 800; letter-spacing: -0.02em; line-height: 1; }
+.logo-master { color: var(--vermelho); }
+.logo-skewb { color: #fff; }
+.logo-pequeno { font-size: 3rem; }
+
+.login { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }
+
+.login-form-area { display: flex; align-items: center; justify-content: center; padding: 2rem; background: #fff; }
+.login-form { width: 100%; max-width: 560px; display: flex; flex-direction: column; }
+.login-form h2 { font-size: 2.25rem; font-weight: 400; text-align: center; margin-bottom: 1.5rem; }
+.login-form > label { font-size: 1.4rem; margin-bottom: 0.25rem; }
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  height: 62px; border: 1px solid #888; border-radius: 10px;
+  padding: 0 1rem; font-size: 1.1rem; margin-bottom: 1.75rem;
+}
+.login-opcoes { display: flex; justify-content: space-between; align-items: center; margin-top: -0.75rem; margin-bottom: 1.75rem; font-size: 0.95rem; }
+.lembrar { display: flex; align-items: center; gap: 0.5rem; }
+.login-opcoes a { color: #1a8fb8; text-decoration: none; }
+.login-opcoes a:hover { text-decoration: underline; }
+.erro { color: #c00; margin-bottom: 1rem; }
+.btn-entrar { height: 62px; border: 1px solid #222; border-radius: 4px; background: var(--roxo); color: #fff; font-size: 1.4rem; font-weight: 700; }
+.btn-entrar:hover { filter: brightness(1.08); }
+
+.login-destaque {
+  background: var(--roxo); color: #fff;
+  display: flex; flex-direction: column; align-items: center; justify-content: space-between;
+  padding: 2rem 1rem 4rem; text-align: center;
+}
+.login-destaque .cubo { width: min(340px, 70%); height: auto; }
+.login-destaque p { font-size: 1.15rem; font-weight: 700; }
+
+@media (max-width: 800px) {
+  .login { grid-template-columns: 1fr; }
+  .login-destaque { order: -1; gap: 1.5rem; padding-bottom: 2rem; }
+  .logo { font-size: 3rem; }
+}
