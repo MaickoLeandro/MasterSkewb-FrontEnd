@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Praticar.css";
+import Embaralhado from "../data/cuboEmbaralhado.jsx"
+import Parcial from "../data/cuboParcial.jsx"
 
 function gerarEmbaralhamento(qtd = 9) {
   const movimentos = ["R", "L", "U", "B"];
@@ -154,6 +156,8 @@ function Praticar() {
 
       <div className="praticar-imagens">
         <div className="planificacao">
+          <Parcial />
+
           <label>
             <input
               type="checkbox"
@@ -164,7 +168,8 @@ function Praticar() {
           </label>
         </div>
         <div className="planificacao" />
-      </div>
+        <Embaralhado />
+       </div>
     </div>
   );
 }
