@@ -114,7 +114,7 @@ function Praticar() {
           ))}
         </p>
         <select aria-label="Opção" defaultValue="0">
-          {[0, 1, 2, 3, 4, 5].map((n) => (
+          {[0, 1, 2, 3, 4, 5, 6, 7].map((n) => (
             <option key={n}>{n}</option>
           ))}
         </select>
@@ -167,8 +167,9 @@ function Praticar() {
             fixar
           </label>
         </div>
-        <div className="planificacao" />
+        <div className="planificacao" >
         <Embaralhado />
+        </div>
        </div>
     </div>
   );

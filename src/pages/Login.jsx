@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../components/Logo.jsx";
@@ -12,10 +13,17 @@ function Login({ onLogin }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+
     if (usuario.trim() === "" || senha.trim() === "") {
       setErro("Informe usuário e senha.");
       return;
     }
+
+    if (senha.length < 6) {
+      setErro("A senha deve ter no mínimo 6 caracteres.");
+      return;
+    }
+
     setErro("");
     onLogin();
     navigate("/home");
@@ -43,6 +51,7 @@ function Login({ onLogin }) {
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
             autoComplete="current-password"
+            minLength={6}
           />
 
           <div className="login-opcoes">
@@ -59,7 +68,9 @@ function Login({ onLogin }) {
 
           {erro && <p className="erro" role="alert">{erro}</p>}
 
-          <button type="submit" className="btn-entrar">Entrar</button>
+          <button type="submit" className="btn-entrar">
+            Entrar
+          </button>
         </form>
       </section>
 
